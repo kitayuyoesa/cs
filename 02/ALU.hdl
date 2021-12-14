@@ -82,7 +82,7 @@ CHIP ALU {
         Mux16 (a=fout, b=notfout, sel=no, out=out, out[0..7]=leastout, out[8..15]=mostout, out[15]=ng);
 
         // 7. 最終出力にがすべて0かどうか判別
-        // 両方0なら1を出力, Or8Wayは1個でも0があれば1を出力
+        // 両方0なら1を出力, Or8Wayは1個でも1があれば1を出力
         Or8Way(in=leastout, out=existoneleast);
         Or8Way(in=mostout, out=existonemost);
         // Norを実装する 0,0のときだけ1をかえす
